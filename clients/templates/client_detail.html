@@ -30,8 +30,7 @@
         <div class="card-header">
             Comments <a type="button" class="btn btn-success" href="{% url 'comment_create' object.pk %}">Add
             comment</a>
-             <a type="button" class="btn btn-success" hhref="{% url 'comment_edit' comment.pk %}">Edit</a>
-                        <a type="button" class="btn btn-danger" href="{% url 'comment_delete' comment.pk %}">Delete</a>
+
         </div>
         <div class="card-body ">
             {% for comment in object.comments.all %}
@@ -42,6 +41,9 @@
                         <br>
                         Author: {{ comment.author }}
                         </p>
+                <br>
+                             <a type="button" class="btn btn-success" href="{% url 'comment_edit' comment.pk %}">Edit comment</a>
+                        <a type="button" class="btn btn-danger" href="{% url 'comment_delete' comment.pk %}">Delete comment</a>
 
             {% endfor %}
         </div>
@@ -50,9 +52,7 @@
         <div class="card-header">
             Vehicles <a type="button" class="btn btn-success" href="{% url 'vehicles_create' object.pk %}">Add
             vehicles</a>
-            <a type="button" class="btn btn-success" href="{% url 'vehicles_edit' vehicle.pk %}">Edit</a>
-                        <a type="button" class="btn btn-danger" href="{% url 'vehicles_delete' vehicle.pk %}">Delete</a>
-                    </div>
+
         </div>
         <div class="card-body">
             {% for vehicle in object.vehicles.all %}
@@ -64,7 +64,10 @@
 
                         <span class="font-muted-">Date of Purchase: {{ vehicle.purchase_date }}  </span><br>
                         <span class="font-muted">Last Service Date: {{ vehicle.service_date }}  </span><br>
-
+<br>
+                <hr>
+                            <a type="button" class="btn btn-success" href="{% url 'vehicles_edit' vehicle.pk %}">Edit</a>
+                        <a type="button" class="btn btn-danger" href="{% url 'vehicles_delete' vehicle.pk %}">Delete</a>
 
             {% endfor %}
         </div>
